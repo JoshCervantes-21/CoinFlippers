@@ -10,8 +10,10 @@ def gameStart() :
 def gameInput(response) :
     if response.casefold() == "yes".casefold() :
         print("Starting a game")
+        return True
     else : 
         print("No game started")
+        return False
 
 def gameLogic() :
     print("So is it gonna be heads or tails?")
@@ -38,7 +40,8 @@ def gameLogic() :
 def gameWrapper() :
     gameStart()
     PlayerResponse = input()
-    gameInput(PlayerResponse)
+    if not gameInput(PlayerResponse) :
+        return
     gameLogic()
 
 main()
