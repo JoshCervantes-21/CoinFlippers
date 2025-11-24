@@ -1,10 +1,7 @@
 import random
 
 def main() :
-    gameStart()
-    PlayerResponse = input()
-    gameInput(PlayerResponse)
-    gameLogic()
+    gameWrapper()
 
 def gameStart() :
     print("Welcome to Coin Flippers!")
@@ -38,5 +35,10 @@ def gameLogic() :
         else :
             print("The coin landed on " + result + "! Sorry, you lose this round.")
 
+def gameWrapper() :
+    gameStart()
+    PlayerResponse = input()
+    gameInput(PlayerResponse)
+    gameLogic()
 
 main()
